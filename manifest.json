@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Reddit Open Visible",
+  "version": "1.0.0",
+  "description": "One shortcut opens the comments of every visible Reddit post in background tabs and hides those posts.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "reddit-open-visible@pederhs",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "permissions": ["tabs"],
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+    "open-visible": {
+      "suggested_key": { "default": "Alt+Shift+A" },
+      "description": "Open comments of visible posts and hide them"
+    }
+  }
+}

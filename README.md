@@ -4,6 +4,8 @@ Firefox extension for old Reddit. Press **Alt+Shift+A** on a feed and every
 post on screen gets its comments opened in background tabs (in feed order),
 then hidden with Reddit's own hide, so it stays hidden on your account.
 Logged out, posts are only hidden on the page until reload. Ads are skipped.
+With Reddit Enhancement Suite installed, each new tab turns on RES
+**show images**.
 
 Change the shortcut in `about:addons` → gear → Manage Extension Shortcuts.
 Avoid Alt+letters that open Firefox menus (F, E, V, S, B, P, T, H).

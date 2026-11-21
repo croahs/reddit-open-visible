@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Reddit Open Visible",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "One shortcut opens the comments of every visible Reddit post in background tabs and hides those posts.",
   "browser_specific_settings": {
     "gecko": {

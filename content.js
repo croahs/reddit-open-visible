@@ -23,3 +23,21 @@ browser.runtime.onMessage.addListener((msg) => {
 
   return Promise.resolve(urls);
 });
+
+// Opened by the shortcut: press RES's "show images" tab once it appears.
+// RES has no setting to keep it on, and adds the button after page load.
+if (location.hash === "#rov-show-images") {
+  history.replaceState(null, "", location.pathname + location.search);
+  const pressShowImages = () => {
+    const button = document.querySelector("li.res-show-images:not(.selected) > a");
+    if (button) button.click();
+    return Boolean(button);
+  };
+  if (!pressShowImages()) {
+    const observer = new MutationObserver(() => {
+      if (pressShowImages()) observer.disconnect();
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(() => observer.disconnect(), 15000);
+  }
+}
